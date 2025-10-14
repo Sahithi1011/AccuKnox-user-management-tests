@@ -1,13 +1,19 @@
-# OrangeHRM_UserManagement_Automation
+# user_management.py
 
-Playwright Python automation for OrangeHRM User Management module.
+class UserManagement:
+    def __init__(self):
+        self.users = []
 
-## Project Setup
+    def add_user(self, name):
+        if name not in self.users:
+            self.users.append(name)
+            return "User added"
+        else:
+            return "User already exists"
 
-1. Install Python (>=3.10 recommended)
-2. Install Playwright:
-   ```bash
-   pip install playwright
-   playwright install
-git clone https://github.com/Sahithi1011/OrangeHRM_UserManagement_Automation.git
-cd OrangeHRM_UserManagement_Automation
+    def remove_user(self, name):
+        if name in self.users:
+            self.users.remove(name)
+            return "User removed"
+        else:
+            return "User not found"
